@@ -1,0 +1,59 @@
+<div class="container gallery">
+  <h1>Galería de imágenes</h1>
+
+  <div class="glide">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+        {{#each allPictures}}
+        <li class="glide__slide">
+          <img src="{{path}}" alt="{{description}}">
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="glide2">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+        {{#each allPictures}}
+        <li class="glide__slide">
+          <img src="{{path}}" alt="{{description}}">
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row">
+    {{#each allPictures}}
+
+    <div class="col-md-3">
+      <figure>
+        <img src="{{path}}" alt="{{description}}">
+        <figcaption>
+          <h6>{{name}}</h6>
+          <p>{{description}} | <a href="{{path}}" download="{{name}}">Descargar</a></p>
+        </figcaption>
+      </figure>
+    </div>
+
+    {{/each}}
+  </div>
+</div>
+<script src="/glide/dist/glide.min.js"></script>
+
+<script>
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3
+  }).mount()
+
+  new Glide('.glide2', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 2
+  }).mount()
+</script>
